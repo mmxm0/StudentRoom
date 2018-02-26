@@ -42,7 +42,7 @@ public class ClienteDAO {
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
 		Cliente buscaCliente = ClienteDAO.buscarCodigocliente(cliente.getCpf());
-		//TODO: encontrar o erro nessa porra
+		//TODO: encontrar o erro de lógica;
 		if ( buscaCliente.getCpf()== cliente.getCpf()) {
 			String sql = "UPDATE cliente SET telefone = ?, codigoendereco=?,email=?,mensagem=? WHERE cpf=? ";
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -51,7 +51,7 @@ public class ClienteDAO {
 			stmt.setString(3, cliente.getEmail());
 			stmt.setString(4, cliente.getEmail());
 			stmt.setString(5, cliente.getCpf());
-			stmt.executeQuery();
+			stmt.execute();
 			System.out.println("Dados do cliente atualizados com sucesso");
 		}else {System.out.println("Cliente não encontrado na base de dados...");}
 	}
