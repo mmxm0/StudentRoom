@@ -1,73 +1,88 @@
 package br.com.studentroom.domain;
+
 import br.com.studentroom.util.*;
+
 public class Cliente {
-	@SuppressWarnings("unused")
-	private String CodigoCliente;
-	private String NomeCliente;
-	private String Cpf;
-	private String Rg;
-	private Endereco endereco;
-	private String Email;
-	private String Telefone;
-	private String PlanoContratado;
-	private String TurnoParaEstudo;
+	//private String codigoCliente;
+	private String nomeCliente;
+	private String sobrenomeCliente;
+	private String cpf;
+	private String rg;
+	private String endereco;//chave estrangeira
+	private String email;
+	private String telefone;
+	//private String planoContratado;  NÃO PRECISA!!!
+	private String mensagem;
 	
-	public String getCodigoCliente() {
-		return getCodigoCliente();
+	
+	
+	
+	public Cliente() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public void setCodigoCliente(String codigoCliente) {
-		CodigoCliente = codigoCliente;
+
+	public Cliente(String nomeCliente, String sobrenomeCliente, String cpf, String rg, String endereco, String email,
+			String telefone, String mensagem) {
+		super();
+		this.nomeCliente = nomeCliente;
+		this.sobrenomeCliente = sobrenomeCliente;
+		this.cpf = cpf;
+		this.rg = rg;
+		this.endereco = endereco;
+		this.email = email;
+		this.telefone = telefone;
+		this.mensagem = mensagem;
 	}
+	
 	public String getNomeCliente() {
-		return NomeCliente;
+		return nomeCliente;
 	}
 	public void setNomeCliente(String nomeCliente) {
-		NomeCliente = nomeCliente;
+		this.nomeCliente = nomeCliente;
 	}
-	public String getCPF() {
-		return Cpf;
+	public String getSobrenomeCliente() {
+		return sobrenomeCliente;
 	}
-	public void setCPF(String cPF) {
-		Cpf = cPF;
+	public void setSobrenomeCliente(String sobrenomeCliente) {
+		this.sobrenomeCliente = sobrenomeCliente;
 	}
-	public String getRG() {
-		return Rg;
+	public String getCpf() {
+		return cpf;
 	}
-	public void setRG(String rG) {
-		Rg = rG;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
-	public Endereco getendereco() {
+	public String getRg() {
+		return rg;
+	}
+	public void setRg(String rg) {
+		this.rg = rg;
+	}
+	public String getEndereco() {
 		return endereco;
 	}
-	public void setendereco(Endereco endereco) {
+	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getTelefone() {
-		return Telefone;
+		return telefone;
 	}
 	public void setTelefone(String telefone) {
-		Telefone = telefone;
+		this.telefone = telefone;
 	}
-	public String getPlanoContratado() {
-		return PlanoContratado;
+	public String getMensagem() {
+		return mensagem;
 	}
-	public void setPlanoContratado(String planoContratado) {
-		PlanoContratado = planoContratado;
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
-	public String getTurnoParaEstudo() {
-		return TurnoParaEstudo;
-	}
-	public void setTurnoParaEstudo(String turnoParaEstudo) {
-		TurnoParaEstudo = turnoParaEstudo;
-	}
-	
-	
-	
 
+	
 }

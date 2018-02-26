@@ -2,35 +2,35 @@ package br.com.studentroom.domain;
 import br.com.studentroom.util.*;
 import br.com.studentroom.domain.Sala;
 public class Empresa {
-	private String CodigoEmpresa;
-	private String NomeEmpresa;
-	private String Cnpj;
+	private String codigoEmpresa;
+	private String nomeEmpresa;
+	private String cnpj;
 	private Endereco endereco;
-	private String Telefone;
-	private String Email;
-	private int QuantidadeSala;
-	private Sala  TipoInstalacao;
+	private String telefone;
+	private String email;
+	private int quantidadeSala;
+	private Sala  tipoInstalacao;
 	
 	
 	
 	
 	public String getCodigoEmpresa() {
-		return CodigoEmpresa;
+		return codigoEmpresa;
 	}
 	public void setCodigoEmpresa(String codigoEmpresa) {
-		CodigoEmpresa = codigoEmpresa;
+		codigoEmpresa = codigoEmpresa;
 	}
 	public String getNomeEmpresa() {
-		return NomeEmpresa;
+		return nomeEmpresa;
 	}
 	public void setNomeEmpresa(String nomeEmpresa) {
-		NomeEmpresa = nomeEmpresa;
+		nomeEmpresa = nomeEmpresa;
 	}
 	public String getCnpj() {
-		return Cnpj;
+		return cnpj;
 	}
 	public void setCnpj(String cnpj) {
-		Cnpj = cnpj;
+		cnpj = cnpj;
 	}
 	public Endereco getEndereco() {
 		return endereco;
@@ -39,28 +39,28 @@ public class Empresa {
 		this.endereco = endereco;
 	}
 	public String getTelefone() {
-		return Telefone;
+		return telefone;
 	}
 	public void setTelefone(String telefone) {
-		Telefone = telefone;
+		telefone = telefone;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		email = email;
 	}
 	public int getQuantidadeSala() {
-		return QuantidadeSala;
+		return quantidadeSala;
 	}
 	public void setQuantidadeSala(int quantidadeSala) {
-		QuantidadeSala = quantidadeSala;
+		quantidadeSala = quantidadeSala;
 	}
 	public Sala getTipoInstalacao() {
-		return TipoInstalacao;
+		return tipoInstalacao;
 	}
 	public void setTipoInstalacao(Sala tipoInstalacao) {
-		TipoInstalacao = tipoInstalacao;
+		tipoInstalacao = tipoInstalacao;
 	}
 	
 	
