@@ -67,6 +67,7 @@ public class EmpresaDAO {
 			empresa.setQuantidadeSala(rs.getString("qtddSala"));
 			
 		}
+		conn.close();
 		return empresa;
 	}
 	public ArrayList<Empresa> lista()throws SQLException{
