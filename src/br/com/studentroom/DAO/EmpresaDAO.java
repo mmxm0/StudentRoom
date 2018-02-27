@@ -5,6 +5,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import br.com.studentroom.domain.Cliente;
 import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.factory.ConexaoBD;
 
@@ -49,8 +51,23 @@ public class EmpresaDAO {
 		System.out.println("Dados do cliente atualizados com sucesso");
 		
 	}
-	public void buscarCodigoempresa(Empresa empresa)throws SQLException{
-		
+	public void Empresa buscarCodigoempresa(String cnpj)throws SQLException{
+		ConexaoBD conexao = new ConexaoBD();
+		Connection conn = conexao.getConnection();
+		String sql = "SELECT * FROM empresa WHERE cnpj=?";
+		java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1,cnpj);
+		ResultSet rs = stmt.executeQuery();
+		Empresa empresa = new Empresa();
+		if(rs.next()) {
+			empresa.setCnpj(rs.getString("cnpj"));
+			empresa.setNomeEmpresa(rs.getString("nome"));
+			empresa.setTelefone(rs.getString("telefone"));
+			empresa.setEmail(rs.getString("email"));
+			empresa.setQuantidadeSala(rs.getString("qtddSala"));
+			
+		}
+		return empresa;
 	}
 	public ArrayList<Empresa> lista()throws SQLException{
 		return null;
