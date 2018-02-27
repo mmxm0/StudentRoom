@@ -13,7 +13,7 @@ public class Teste {
 		ClienteDAO enfiaNoBD = new ClienteDAO();
 		enfiaNoBD.salvarCliente(c1);
 		ClienteDAO.buscarCodigocliente("09469844416");
-		c1.setNomeCliente("Martaaa");
+		c1.setNomeCliente("Geisa");
 		enfiaNoBD.editarCliente(c1);
 		
 	}
