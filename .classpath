@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="build"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
-		<attributes>
-			<attribute name="module" value="true"/>
-			<attribute name="owner.project.facets" value="java"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-<<<<<<< Updated upstream
-	<classpathentry kind="lib" path="C:/Users/a10336dirpa134/Downloads/mysql-connector-java-5.1.42.zip"/>
-	<classpathentry kind="lib" path="C:/Users/a10336dirpa134/Downloads/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
-=======
-	<classpathentry kind="lib" path="C:/Users/yeter/Desktop/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar" sourcepath="C:/Users/yeter/Downloads/mysql-connector-java-5.1.42.zip"/>
-	<classpathentry kind="lib" path="C:/Users/a10336dirpa131/Downloads/BootsFaces-OSP-1.2.0-dist.jar"/>
->>>>>>> Stashed changes
-	<classpathentry kind="output" path="build/classes"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
