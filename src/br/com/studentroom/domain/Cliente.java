@@ -17,7 +17,7 @@ public class Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(String nomeCliente, String sobrenomeCliente, String cpf,  Endereco endereco, String email,
+	public Cliente(String nomeCliente, String sobrenomeCliente, String cpf,  String email,
 			String telefone, String mensagem) {
 		super();
 		this.nomeCliente = nomeCliente;

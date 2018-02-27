@@ -1,44 +1,35 @@
 package br.com.studentroom.domain;
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.studentroom.domain.Sala;
 import br.com.studentroom.util.Endereco;
 public class Empresa {
-	private String codigoEmpresa;
+	//private String codigoEmpresa;
 	private String nomeEmpresa;
 	private String cnpj;
 	private Endereco endereco;
 	private String telefone;
 	private String email;
 	private int quantidadeSala;
-	private Sala  tipoInstalacao;
+	//private List<Sala> salas; REMOVER
 	
 	public Empresa(){
 		super();
 	}
 	
 	public Empresa(String codigoEmpresa,String nomeEmpresa,String cnpj,Endereco endereco,String telefone,String email,
-			int quantidadeSala, Sala tipoInstalacao ) {
+			int quantidadeSala) {
 		   super();
-		   this.codigoEmpresa = codigoEmpresa;
 		   this.nomeEmpresa = nomeEmpresa;
 		   this.cnpj=cnpj;
 		   this.endereco= endereco;
 		   this.telefone=telefone;
 		   this.email = email;
 		   this.quantidadeSala = quantidadeSala;
-		   this.tipoInstalacao = tipoInstalacao;
-		   
-		   
-			   
-		
+		  
 	}
 
-	public String getCodigoEmpresa() {
-		return codigoEmpresa;
-	}
-
-	public void setCodigoEmpresa(String codigoEmpresa) {
-		this.codigoEmpresa = codigoEmpresa;
-	}
 
 	public String getNomeEmpresa() {
 		return nomeEmpresa;
@@ -88,16 +79,14 @@ public class Empresa {
 		this.quantidadeSala = quantidadeSala;
 	}
 
-	public Sala getTipoInstalacao() {
-		return tipoInstalacao;
+
+	/*public List<Sala> getSalas() {
+		return salas;
 	}
 
-	public void setTipoInstalacao(Sala tipoInstalacao) {
-		this.tipoInstalacao = tipoInstalacao;
-	}
-	
-	
-	
+	public void setSalas(Sala nSala) {
+		this.salas.add(nSala);
+	}*/
 	
 
 }

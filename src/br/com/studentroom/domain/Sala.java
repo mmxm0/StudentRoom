@@ -7,7 +7,7 @@ public class Sala {
  private String reservaSala;
  private double precoSala;
  private String horarioDisponivel;
- 
+ //TODO: Criar atributo Empresa get e set
  public Sala() {
 	super();
  }

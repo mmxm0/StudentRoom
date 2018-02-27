@@ -39,19 +39,17 @@ public class ClienteDAO {
 	public void editarCliente(Cliente cliente)throws SQLException, ClassNotFoundException{
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
-		Cliente buscaCliente = ClienteDAO.buscarCodigocliente(cliente.getCpf());
 		//TODO: encontrar o erro de lógica;
-		if ( buscaCliente.getCpf()== cliente.getCpf()) {
-			String sql = "UPDATE cliente SET telefone = ?, email=?,mensagem=? WHERE cpf=? ";
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, cliente.getTelefone());
-			stmt.setString(3, cliente.getEmail());
-			stmt.setString(4, cliente.getEmail());
-			stmt.setString(5, cliente.getCpf());
-			stmt.execute();
-			System.out.println("Dados do cliente atualizados com sucesso");
-		}else {System.out.println("Cliente não encontrado na base de dados...");}
-	}
+		String sql = "UPDATE cliente SET telefone = ?, email=?,mensagem=? WHERE cpf=? ";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, cliente.getTelefone());
+		stmt.setString(3, cliente.getEmail());
+		stmt.setString(4, cliente.getEmail());
+		stmt.setString(5, cliente.getCpf());
+		stmt.execute();
+		System.out.println("Dados do cliente atualizados com sucesso");
+		System.out.println("Cliente não encontrado na base de dados...");
+		}
     public static Cliente buscarCodigocliente(String cpf)throws SQLException, ClassNotFoundException{
     	ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
@@ -62,11 +60,12 @@ public class ClienteDAO {
 		Cliente cliente = new Cliente();
 		if(rs.next()) {
 			cliente.setCpf(rs.getString("cpf"));
-			cliente.setEmail(rs.getString("email"));
-			cliente.setMensagem(rs.getString("mensagem"));
 			cliente.setNomeCliente(rs.getString("nome"));
 			cliente.setSobrenomeCliente(rs.getString("sobrenome"));
+			cliente.setEmail(rs.getString("email"));
 			cliente.setTelefone(rs.getString("telefone"));
+			cliente.setMensagem(rs.getString("mensagem"));
+
 			//System.out.println("O cliente "+cliente.getNomeCliente()+" está no bd ");
 		}
 

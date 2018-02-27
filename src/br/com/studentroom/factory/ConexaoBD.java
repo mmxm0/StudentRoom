@@ -7,10 +7,12 @@ import java.sql.SQLException;
 public class ConexaoBD {
 
 	public Connection getConnection() throws SQLException, ClassNotFoundException {
-		Class.forName("com.mysql.jdbc.Driver");
+		
+		Class.forName("com.mysql.jdbc.driver");
 		Connection conn = null;
 		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/studyroom?autoReconnect=true&useSSL=false","root","1234");
 		//conn.close();
+		System.out.println("conectado");
 		return conn;
 	
 	}

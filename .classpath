@@ -9,6 +9,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/yeter/Desktop/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar" sourcepath="C:/Users/yeter/Downloads/mysql-connector-java-5.1.42.zip"/>
+	<classpathentry kind="lib" path="C:/Users/a10336dirpa134/Downloads/mysql-connector-java-5.1.42.zip"/>
+	<classpathentry kind="lib" path="C:/Users/a10336dirpa134/Downloads/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
