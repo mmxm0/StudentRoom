@@ -15,16 +15,15 @@ public class ClienteDAO {
 	public void salvarCliente(Cliente cliente)throws SQLException, ClassNotFoundException{
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn =  conexao.getConnection();
-		String sql = "INSERT into cliente (cpf, nome, sobrenome, rg, codigoendereco, email, telefone, mensagem) VALUES (?,?,?,?,?,?,?,?)";
+		String sql = "INSERT into cliente (cpf, nome, sobrenome, codigoendereco, email, telefone, mensagem) VALUES (?,?,?,?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1,cliente.getCpf());
 		stmt.setString(2,cliente.getNomeCliente());
 		stmt.setString(3,cliente.getSobrenomeCliente());
-		stmt.setString(4,cliente.getRg());
-		stmt.setString(5,cliente.getEndereco());
-		stmt.setString(6,cliente.getEmail());
-		stmt.setString(7, cliente.getTelefone());
-		stmt.setString(8, cliente.getMensagem());
+		stmt.setString(4,cliente.getEndereco());
+		stmt.setString(5,cliente.getEmail());
+		stmt.setString(6, cliente.getTelefone());
+		stmt.setString(7, cliente.getMensagem());
 		stmt.execute();
 		System.out.println("Cliente inserido no banco com sucesso!!!");
 	}
