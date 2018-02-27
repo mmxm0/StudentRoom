@@ -1,49 +1,78 @@
 package br.com.studentroom.domain;
 
 public class Sala {
- private String CodigoSala;
- private String LocalSala;
- private String Estrutura;
- private String ReservaSala;
- private double PrecoSala;
- private String HorarioDisponivel;
+ private String codigoSala;
+ private String localSala;
+ private String estrutura;
+ private String reservaSala;
+ private double precoSala;
+ private String horarioDisponivel;
  
+ public Sala() {
+	super();
+ }
+ 
+ public Sala(String codigoSala,String localSala,String estrutura,String reservaSala,double precoSala,String horarioDisponivel ) {
+     super();
+     
+     this.codigoSala = codigoSala;
+     this.localSala = localSala;
+     this.estrutura = estrutura;
+     this.reservaSala = reservaSala;
+     this.precoSala = precoSala;
+     this.horarioDisponivel = horarioDisponivel;
+     
+ }
+
 public String getCodigoSala() {
-	return CodigoSala;
+	return codigoSala;
 }
+
 public void setCodigoSala(String codigoSala) {
-	CodigoSala = codigoSala;
+	this.codigoSala = codigoSala;
 }
+
 public String getLocalSala() {
-	return LocalSala;
+	return localSala;
 }
+
 public void setLocalSala(String localSala) {
-	LocalSala = localSala;
+	this.localSala = localSala;
 }
+
 public String getEstrutura() {
-	return Estrutura;
+	return estrutura;
 }
+
 public void setEstrutura(String estrutura) {
-	Estrutura = estrutura;
+	this.estrutura = estrutura;
 }
+
 public String getReservaSala() {
-	return ReservaSala;
+	return reservaSala;
 }
+
 public void setReservaSala(String reservaSala) {
-	ReservaSala = reservaSala;
+	this.reservaSala = reservaSala;
 }
+
 public double getPrecoSala() {
-	return PrecoSala;
+	return precoSala;
 }
+
 public void setPrecoSala(double precoSala) {
-	PrecoSala = precoSala;
+	this.precoSala = precoSala;
 }
+
 public String getHorarioDisponivel() {
-	return HorarioDisponivel;
+	return horarioDisponivel;
 }
+
 public void setHorarioDisponivel(String horarioDisponivel) {
-	HorarioDisponivel = horarioDisponivel;
+	this.horarioDisponivel = horarioDisponivel;
 }
+ 
+ 
  
 }
  
