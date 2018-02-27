@@ -1,13 +1,10 @@
 package br.com.studentroom.domain;
 
-import br.com.studentroom.util.Endereco;
 
 public class Cliente {
-	//private String codigoCliente;
 	private String nomeCliente;
 	private String sobrenomeCliente;
 	private String cpf;
-	private Endereco endereco;//chave estrangeira
 	private String email;
 	private String telefone;
 	private String mensagem;
@@ -26,7 +23,6 @@ public class Cliente {
 		this.nomeCliente = nomeCliente;
 		this.sobrenomeCliente = sobrenomeCliente;
 		this.cpf = cpf;
-		this.endereco = endereco;
 		this.email = email;
 		this.telefone = telefone;
 		this.mensagem = mensagem;
@@ -49,12 +45,6 @@ public class Cliente {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-	public Endereco getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
 	}
 	public String getEmail() {
 		return email;
