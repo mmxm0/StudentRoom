@@ -11,15 +11,42 @@ import br.com.studentroom.factory.ConexaoBD;
 
 public class EmpresaDAO {
 	
-	public void salvarEmpresa(Empresa empresa)throws SQLException{
-		
+	public void salvarEmpresa(Empresa empresa)throws SQLException, ClassNotFoundException{
+		ConexaoBD conexao = new ConexaoBD();
+		Connection conn =  conexao.getConnection();
+		String sql = "INSERT into empresa (cnpj, nome, email, telefone, qtddSala) VALUES (?,?,?,?,?)";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, empresa.getCnpj());
+		stmt.setString(2, empresa.getNomeEmpresa());
+		stmt.setString(3, empresa.getEmail());
+		stmt.setInt(4, empresa.getQuantidadeSala());
+		stmt.execute();
+		System.out.println("Empresa inserida no banco com sucesso!!!");
 	}
 	
-	public void excluirEmpresa(Empresa empresa)throws SQLException{
-		
+	public void excluirEmpresa(Empresa empresa)throws SQLException, ClassNotFoundException{
+		ConexaoBD conexao = new ConexaoBD();
+		Connection conn = conexao.getConnection();
+		String sql = "DELETE from empresa WHERE cnpj=?";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, empresa.getCnpj());
+		stmt.execute();
+		System.out.println("Cliente removido do banco com sucesso!!!");
+
 	}
     
-	public void editarEmpresa(Empresa empresa)throws SQLException{
+	public void editarEmpresa(Empresa empresa)throws SQLException, ClassNotFoundException{
+		ConexaoBD conexao = new ConexaoBD();
+		Connection conn = conexao.getConnection();
+		//TODO: encontrar o erro de lógica;
+		String sql = "UPDATE cliente SET telefone = ?, email=?,qtddSala=? WHERE cnpj=? ";
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setString(1, empresa.getTelefone());
+		stmt.setString(2, empresa.getEmail());
+		stmt.setInt(3, empresa.getQuantidadeSala());
+		stmt.setString(4, empresa.getCnpj());
+		stmt.execute();
+		System.out.println("Dados do cliente atualizados com sucesso");
 		
 	}
 	public void buscarCodigoempresa(Empresa empresa)throws SQLException{

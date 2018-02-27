@@ -20,9 +20,9 @@ public class ClienteDAO {
 		stmt.setString(1,cliente.getCpf());
 		stmt.setString(2,cliente.getNomeCliente());
 		stmt.setString(3,cliente.getSobrenomeCliente());
-		stmt.setString(5,cliente.getEmail());
-		stmt.setString(6, cliente.getTelefone());
-		stmt.setString(7, cliente.getMensagem());
+		stmt.setString(4,cliente.getEmail());
+		stmt.setString(5, cliente.getTelefone());
+		stmt.setString(6, cliente.getMensagem());
 		stmt.execute();
 		System.out.println("Cliente inserido no banco com sucesso!!!");
 	}
@@ -43,12 +43,11 @@ public class ClienteDAO {
 		String sql = "UPDATE cliente SET telefone = ?, email=?,mensagem=? WHERE cpf=? ";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, cliente.getTelefone());
-		stmt.setString(3, cliente.getEmail());
-		stmt.setString(4, cliente.getEmail());
-		stmt.setString(5, cliente.getCpf());
+		stmt.setString(2, cliente.getEmail());
+		stmt.setString(3, cliente.getMensagem());
+		stmt.setString(4, cliente.getCpf());
 		stmt.execute();
 		System.out.println("Dados do cliente atualizados com sucesso");
-		System.out.println("Cliente não encontrado na base de dados...");
 		}
     public static Cliente buscarCodigocliente(String cpf)throws SQLException, ClassNotFoundException{
     	ConexaoBD conexao = new ConexaoBD();

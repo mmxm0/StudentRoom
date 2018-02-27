@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import br.com.studentroom.DAO.ClienteDAO;
 import br.com.studentroom.domain.Cliente;
 import br.com.studentroom.factory.ClienteBD;
-public class Teste {
+public class TesteCliente {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		ClienteBD tabelaCliente = new ClienteBD();

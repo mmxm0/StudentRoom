@@ -8,7 +8,7 @@ public class ClienteBD {
 	public void criaTabela() {
 		Statement stmt = null;
 		try { 
-			Class.forName("com.mysql.jdbc.driver");
+			Class.forName("com.mysql.jdbc.Driver");
 			ConexaoBD conexao = new ConexaoBD();
 			Connection conn = conexao.getConnection();
 			System.out.println("Conectado com o Banco de Dados com sucesso...");
