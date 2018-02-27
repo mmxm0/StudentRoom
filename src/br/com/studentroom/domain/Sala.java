@@ -1,5 +1,5 @@
 package br.com.studentroom.domain;
-
+import br.com.studentroom.domain.Empresa;
 public class Sala {
  private String codigoSala;
  private String localSala;
@@ -7,12 +7,22 @@ public class Sala {
  private String reservaSala;
  private double precoSala;
  private String horarioDisponivel;
- //TODO: Criar atributo Empresa get e set
+ @SuppressWarnings("unused")
+private Empresa empresa;
+ public Empresa getEmpresa() {
+	return empresa;
+}
+
+public void setEmpresa(Empresa empresa) {
+	this.empresa = empresa;
+}
+
+//TODO: Criar atributo Empresa get e set
  public Sala() {
 	super();
  }
  
- public Sala(String codigoSala,String localSala,String estrutura,String reservaSala,double precoSala,String horarioDisponivel ) {
+ public Sala(String codigoSala,String localSala,String estrutura,String reservaSala,double precoSala,String horarioDisponivel,Empresa empresa ) {
      super();
      
      this.codigoSala = codigoSala;
@@ -21,6 +31,7 @@ public class Sala {
      this.reservaSala = reservaSala;
      this.precoSala = precoSala;
      this.horarioDisponivel = horarioDisponivel;
+     this.empresa = empresa;
      
  }
 
@@ -72,8 +83,13 @@ public void setHorarioDisponivel(String horarioDisponivel) {
 	this.horarioDisponivel = horarioDisponivel;
 }
  
+public Empresa getempresa() {
+	return empresa;
+}
  
- 
+ public  void setempresa(Empresa empresa) {
+	 this.empresa = empresa;
+ }
 }
  
  

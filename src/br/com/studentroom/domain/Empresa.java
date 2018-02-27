@@ -5,14 +5,14 @@ import java.util.List;
 import br.com.studentroom.domain.Sala;
 import br.com.studentroom.util.Endereco;
 public class Empresa {
-	//private String codigoEmpresa;
+	
 	private String nomeEmpresa;
 	private String cnpj;
 	private Endereco endereco;
 	private String telefone;
 	private String email;
 	private int quantidadeSala;
-	//private List<Sala> salas; REMOVER
+	
 	
 	public Empresa(){
 		super();
