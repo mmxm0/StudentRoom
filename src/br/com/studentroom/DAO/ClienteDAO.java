@@ -15,12 +15,11 @@ public class ClienteDAO {
 	public void salvarCliente(Cliente cliente)throws SQLException, ClassNotFoundException{
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn =  conexao.getConnection();
-		String sql = "INSERT into cliente (cpf, nome, sobrenome, codigoendereco, email, telefone, mensagem) VALUES (?,?,?,?,?,?,?)";
+		String sql = "INSERT into cliente (cpf, nome, sobrenome,  email, telefone, mensagem) VALUES (?,?,?,?,?,?)";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1,cliente.getCpf());
 		stmt.setString(2,cliente.getNomeCliente());
 		stmt.setString(3,cliente.getSobrenomeCliente());
-		stmt.setString(4,cliente.getEndereco());
 		stmt.setString(5,cliente.getEmail());
 		stmt.setString(6, cliente.getTelefone());
 		stmt.setString(7, cliente.getMensagem());
@@ -43,10 +42,9 @@ public class ClienteDAO {
 		Cliente buscaCliente = ClienteDAO.buscarCodigocliente(cliente.getCpf());
 		//TODO: encontrar o erro de lógica;
 		if ( buscaCliente.getCpf()== cliente.getCpf()) {
-			String sql = "UPDATE cliente SET telefone = ?, codigoendereco=?,email=?,mensagem=? WHERE cpf=? ";
+			String sql = "UPDATE cliente SET telefone = ?, email=?,mensagem=? WHERE cpf=? ";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, cliente.getTelefone());
-			stmt.setString(2, cliente.getEndereco());
 			stmt.setString(3, cliente.getEmail());
 			stmt.setString(4, cliente.getEmail());
 			stmt.setString(5, cliente.getCpf());
@@ -65,9 +63,7 @@ public class ClienteDAO {
 		if(rs.next()) {
 			cliente.setCpf(rs.getString("cpf"));
 			cliente.setEmail(rs.getString("email"));
-			cliente.setEndereco(rs.getString("codigoendereco"));
 			cliente.setMensagem(rs.getString("mensagem"));
-			cliente.setRg(rs.getString("rg"));
 			cliente.setNomeCliente(rs.getString("nome"));
 			cliente.setSobrenomeCliente(rs.getString("sobrenome"));
 			cliente.setTelefone(rs.getString("telefone"));

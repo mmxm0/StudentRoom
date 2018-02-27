@@ -15,7 +15,7 @@ public class ClienteBD {
 			System.out.println("Criando uma tabela no Banco de Dados...");
 			stmt = conn.createStatement();
 			String sql = "CREATE TABLE cliente (cpf VARCHAR(11) not NULL, " + " nome VARCHAR(255), sobrenome VARCHAR(255),"
-					+ "rg VARCHAR(7), codigoendereco VARCHAR(200), email VARCHAR(255), telefone VARCHAR(20), mensagem VARCHAR(255),"+
+					+ " email VARCHAR(255), telefone VARCHAR(20), mensagem VARCHAR(255),"+
 					" PRIMARY KEY (cpf))";
 			stmt.executeUpdate(sql);
 			System.out.println("Tabela cliente criada no banco de dados com sucesso...");
