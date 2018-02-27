@@ -14,5 +14,4 @@ public class ConexaoBD {
 		return conn;
 	
 	}
-
 }
