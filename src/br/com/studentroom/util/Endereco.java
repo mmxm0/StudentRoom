@@ -1,79 +1,74 @@
 package br.com.studentroom.util;
 
 public class Endereco {
-	private String Rua;
+	private String rua;
 
-	private String Numero;
+	private String numero;
 
-	private String Complemento;
+	private String complemento;
 
-	private String Bairro;
+	private String bairro;
 
-	private String Cep;
+	private String cep;
 
-	private String Cidade;
+	private String cidade;
 
-	private String Estado;
+	private String estado;
 
 	public String getRua() {
-		return Rua;
+		return rua;
 	}
 
 	public void setRua(String rua) {
-		Rua = rua;
+		this.rua = rua;
 	}
 
 	public String getNumero() {
-		return Numero;
+		return numero;
 	}
 
 	public void setNumero(String numero) {
-		Numero = numero;
+		this.numero = numero;
 	}
 
 	public String getComplemento() {
-		return Complemento;
+		return complemento;
 	}
 
 	public void setComplemento(String complemento) {
-		Complemento = complemento;
+		this.complemento = complemento;
 	}
 
 	public String getBairro() {
-		return Bairro;
+		return bairro;
 	}
 
 	public void setBairro(String bairro) {
-		Bairro = bairro;
+		this.bairro = bairro;
 	}
 
 	public String getCep() {
-		return Cep;
+		return cep;
 	}
 
 	public void setCep(String cep) {
-		Cep = cep;
+		this.cep = cep;
 	}
 
 	public String getCidade() {
-		return Cidade;
+		return cidade;
 	}
 
 	public void setCidade(String cidade) {
-		Cidade = cidade;
+		this.cidade = cidade;
 	}
 
 	public String getEstado() {
-		return Estado;
+		return estado;
 	}
 
 	public void setEstado(String estado) {
-		Estado = estado;
+		this.estado = estado;
 	}
-	
-	
-	
-	
-	
 
 }
