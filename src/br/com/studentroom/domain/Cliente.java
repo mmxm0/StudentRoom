@@ -1,17 +1,15 @@
 package br.com.studentroom.domain;
 
-import br.com.studentroom.util.*;
+import br.com.studentroom.util.Endereco;
 
 public class Cliente {
 	//private String codigoCliente;
 	private String nomeCliente;
 	private String sobrenomeCliente;
 	private String cpf;
-	private String rg;
-	private String endereco;//chave estrangeira
+	private Endereco endereco;//chave estrangeira
 	private String email;
 	private String telefone;
-	//private String planoContratado;  NÃO PRECISA!!!
 	private String mensagem;
 	
 	
@@ -22,13 +20,12 @@ public class Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cliente(String nomeCliente, String sobrenomeCliente, String cpf, String rg, String endereco, String email,
+	public Cliente(String nomeCliente, String sobrenomeCliente, String cpf,  Endereco endereco, String email,
 			String telefone, String mensagem) {
 		super();
 		this.nomeCliente = nomeCliente;
 		this.sobrenomeCliente = sobrenomeCliente;
 		this.cpf = cpf;
-		this.rg = rg;
 		this.endereco = endereco;
 		this.email = email;
 		this.telefone = telefone;
@@ -53,16 +50,10 @@ public class Cliente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getRg() {
-		return rg;
-	}
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
-	public String getEndereco() {
+	public Endereco getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(String endereco) {
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
 	public String getEmail() {
