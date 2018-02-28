@@ -27,7 +27,7 @@ public class ClienteDAO {
 			stmt.setString(6, cliente.getMensagem());
 			stmt.execute();
 			stmt.close();
-			System.out.println("Cliente inserido no banco com sucesso!!!");
+			System.out.println("Cliente inserido  com sucesso!!!");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -42,7 +42,7 @@ public class ClienteDAO {
 			stmt.setString(1, cliente.getCpf());
 			stmt.execute();
 			stmt.close();
-			System.out.println("Cliente removido do banco com sucesso!!!");
+			System.out.println("Cliente removido  com sucesso!!!");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
