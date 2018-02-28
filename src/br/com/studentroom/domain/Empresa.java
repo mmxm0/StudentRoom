@@ -8,22 +8,21 @@ public class Empresa {
 	private Endereco endereco;
 	private String telefone;
 	private String email;
-	private int quantidadeSala;
+	//private int quantidadeSala;
 	
 	
 	public Empresa(){
 		super();
 	}
 	
-	public Empresa(String codigoEmpresa,String nomeEmpresa,String cnpj,Endereco endereco,String telefone,String email,
-			int quantidadeSala) {
+	public Empresa(String codigoEmpresa,String nomeEmpresa,String cnpj,Endereco endereco,String telefone,String email) {
 		   super();
 		   this.nomeEmpresa = nomeEmpresa;
 		   this.cnpj=cnpj;
 		   this.endereco= endereco;
 		   this.telefone=telefone;
 		   this.email = email;
-		   this.quantidadeSala = quantidadeSala;
+		   //this.quantidadeSala = quantidadeSala;
 		  
 	}
 
@@ -66,14 +65,6 @@ public class Empresa {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public int getQuantidadeSala() {
-		return quantidadeSala;
-	}
-
-	public void setQuantidadeSala(int quantidadeSala) {
-		this.quantidadeSala = quantidadeSala;
 	}
 
 
