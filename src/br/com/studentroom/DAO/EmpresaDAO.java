@@ -3,79 +3,109 @@ package br.com.studentroom.DAO;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-import br.com.studentroom.domain.Cliente;
 import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.factory.ConexaoBD;
 
-
 public class EmpresaDAO {
-	
-	public void salvarEmpresa(Empresa empresa)throws SQLException, ClassNotFoundException{
-		ConexaoBD conexao = new ConexaoBD();
-		Connection conn =  conexao.getConnection();
-		String sql = "INSERT into empresa (cnpj, nome, email, telefone, qtddSala) VALUES (?,?,?,?,?)";
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setString(1, empresa.getCnpj());
-		stmt.setString(2, empresa.getNomeEmpresa());
-		stmt.setString(3, empresa.getEmail());
-		stmt.setInt(4, empresa.getQuantidadeSala());
-		stmt.execute();
-		System.out.println("Empresa inserida no banco com sucesso!!!");
+
+	public void salvarEmpresa(Empresa empresa) throws SQLException, ClassNotFoundException {
+		try {
+			ConexaoBD conexao = new ConexaoBD();
+			Connection conn = conexao.getConnection();
+			String sql = "INSERT into empresa (cnpj, nome, email, telefone, qtddSala) VALUES (?,?,?,?,?)";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, empresa.getCnpj());
+			stmt.setString(2, empresa.getNomeEmpresa());
+			stmt.setString(3, empresa.getEmail());
+			stmt.setInt(4, empresa.getQuantidadeSala());
+			stmt.execute();
+			stmt.close();
+			System.out.println("Empresa inserida no banco com sucesso!!!");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-	
-	public void excluirEmpresa(Empresa empresa)throws SQLException, ClassNotFoundException{
+
+	public void excluirEmpresa(Empresa empresa) throws SQLException, ClassNotFoundException {
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
 		String sql = "DELETE from empresa WHERE cnpj=?";
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setString(1, empresa.getCnpj());
 		stmt.execute();
+		stmt.close();
 		System.out.println("Cliente removido do banco com sucesso!!!");
 
 	}
-    
-	public void editarEmpresa(Empresa empresa)throws SQLException, ClassNotFoundException{
-		ConexaoBD conexao = new ConexaoBD();
-		Connection conn = conexao.getConnection();
-		//TODO: encontrar o erro de lógica;
-		String sql = "UPDATE cliente SET telefone = ?, email=?,qtddSala=? WHERE cnpj=? ";
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setString(1, empresa.getTelefone());
-		stmt.setString(2, empresa.getEmail());
-		stmt.setInt(3, empresa.getQuantidadeSala());
-		stmt.setString(4, empresa.getCnpj());
-		stmt.execute();
-		System.out.println("Dados do cliente atualizados com sucesso");
-		
-	}
-	public void Empresa buscarCodigoempresa(String cnpj)throws SQLException{
-		ConexaoBD conexao = new ConexaoBD();
-		Connection conn = conexao.getConnection();
-		String sql = "SELECT * FROM empresa WHERE cnpj=?";
-		java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
-		stmt.setString(1,cnpj);
-		ResultSet rs = stmt.executeQuery();
-		Empresa empresa = new Empresa();
-		if(rs.next()) {
-			empresa.setCnpj(rs.getString("cnpj"));
-			empresa.setNomeEmpresa(rs.getString("nome"));
-			empresa.setTelefone(rs.getString("telefone"));
-			empresa.setEmail(rs.getString("email"));
-			empresa.setQuantidadeSala(rs.getString("qtddSala"));
-			
-		}
-		conn.close();
-		return empresa;
-	}
-	public ArrayList<Empresa> lista()throws SQLException{
-		return null;
-	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+	public void editarEmpresa(Empresa empresa) throws SQLException, ClassNotFoundException {
+		ConexaoBD conexao = new ConexaoBD();
+		Connection conn = conexao.getConnection();
+		String sql = "UPDATE cliente SET telefone = ?, email=?,qtddSala=? WHERE cnpj=? ";
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, empresa.getTelefone());
+			stmt.setString(2, empresa.getEmail());
+			stmt.setInt(3, empresa.getQuantidadeSala());
+			stmt.setString(4, empresa.getCnpj());
+			stmt.execute();
+			stmt.close();
+			System.out.println("Dados do cliente atualizados com sucesso");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+	public Empresa buscarCodigoempresa(String cnpj) throws SQLException, ClassNotFoundException {
+		ConexaoBD conexao = new ConexaoBD();
+		Connection conn = conexao.getConnection();
+		String sql = "SELECT cnpj FROM empresa,endereco WHERE cnpj=cnpj";
+		try {
+			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, cnpj);
+			ResultSet rs = stmt.executeQuery();
+			Empresa empresa = new Empresa();
+			if (rs.next()) {
+				empresa.setCnpj(rs.getString("cnpj"));
+				empresa.setNomeEmpresa(rs.getString("nome"));
+				empresa.setTelefone(rs.getString("telefone"));
+				empresa.setEmail(rs.getString("email"));
+				empresa.setQuantidadeSala(rs.getInt("qtddSala"));
+
+			}
+			conn.close();
+			return empresa;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public List<Empresa> lista() throws SQLException, ClassNotFoundException {
+		try {
+			ConexaoBD conexao = new ConexaoBD();
+			Connection conn = conexao.getConnection();
+			String sql = "SELECT * FROM cliente";
+			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			List<Empresa> listaEmpresa = new ArrayList<Empresa>();
+			while (rs.next()) {
+				Empresa empresa = new Empresa();
+				empresa.setCnpj(rs.getString("cnpj"));
+				empresa.setNomeEmpresa(rs.getString("nome"));
+				empresa.setEmail(rs.getString("email"));
+				empresa.setQuantidadeSala(rs.getInt("qtddSala"));
+				empresa.setTelefone(rs.getString("telefone"));
+
+			}
+			stmt.close();
+			return listaEmpresa;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }
