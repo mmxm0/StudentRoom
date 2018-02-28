@@ -95,7 +95,7 @@ section {
   -webkit-flex: 1 1 780px;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 780px;
-  flex: 1 1 800px;
+  flex: 1 1 700px;
   margin-right: 1%;
 }
 
@@ -151,7 +151,7 @@ aside {
     text-align: center;
   }
 }
- .map {
-                height: 400px;
-                width: 100%;
-               }
+#map {
+   height: 900px;
+   width: 100%;
+}
