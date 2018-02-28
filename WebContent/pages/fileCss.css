@@ -95,7 +95,7 @@ section {
   -webkit-flex: 1 1 780px;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 780px;
-  flex: 1 1 780px;
+  flex: 1 1 800px;
   margin-right: 1%;
 }
 
@@ -103,7 +103,7 @@ aside {
   -webkit-flex: 1 2 350px;
   -webkit-box-flex: 1;
   -ms-flex: 1 2 350px;
-  flex: 1 2 550px;
+  flex: 1 2 645px;
 }
 
 .container2 {
