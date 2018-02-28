@@ -57,7 +57,7 @@ body {
       color: #000000 !important;/*Cor da fonte do navbar*/
   }
   .navbar-nav li a:hover {
-      color: #fff !important;
+      color: #0000ff!important;
   }
   .navbar-nav li.active a {
       color: #fff !important;
