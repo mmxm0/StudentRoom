@@ -7,8 +7,6 @@ import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import br.com.studentroom.domain.Cliente;
-import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.domain.Sala;
 import br.com.studentroom.factory.ConexaoBD;
 

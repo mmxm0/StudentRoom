@@ -109,7 +109,8 @@ public class EmpresaDAO {
 		}
 	}
 	public List<Sala> listaSalas(String cnpj){
-		
+		//TODO: Repensar a necessidade desse método;
+		return null;
 	}
 
 }
