@@ -66,7 +66,7 @@ public class SalaDAO {
 		}
 	}
 
-	public Sala buscarLocalsala(int codigoSala) throws SQLException, ClassNotFoundException {
+	public Sala buscarCodigoSala(int codigoSala) throws SQLException, ClassNotFoundException {
 		try {//TODO: fazer inner join
 			ConexaoBD conexao = new ConexaoBD();
 			Connection conn = conexao.getConnection();
@@ -89,6 +89,27 @@ public class SalaDAO {
 			return sala;
 	} catch (SQLException e) {
 			throw new RuntimeException(e);
+		}
+	}
+	public Sala buscarLocalSala(String local) {
+		try {
+			ConexaoBD conexao = new ConexaoBD();
+			Connection conn = conexao.getConnection();
+			String sql = "SELECT * FROM sala WHERE local=?";
+			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, local);
+			ResultSet rs = stmt.executeQuery();
+			Sala sala = new Sala();
+			if (rs.next()) {
+				sala.setCodigoSala(rs.getInt("codigo"));
+				sala.setEstrutura(rs.getString("estrutura"));
+				sala.setLocalSala(rs.getString("local"));
+				sala.setPrecoSala(rs.getDouble("preco"));
+				String qrry = rs.getString("id_empresa");//cnpj da empresa
+				sala.setEmpresaCnpj(qrry);
+				EmpresaDAO dao1 = new EmpresaDAO();
+				sala.setObjEmpresa(dao1.buscarCodigoempresa(qrry));
+			
 		}
 	}
 

@@ -4,7 +4,7 @@ import java.util.List;
 import br.com.studentroom.DAO.SalaDAO;
 import br.com.studentroom.domain.Sala;
 
-
+//TODO: Metodos buscaLocal e exibirEmpresa;
 public class SalaView {
 	
 	private Sala sala;
