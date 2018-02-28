@@ -8,5 +8,31 @@ public class Usuario {
 		super();
 	}
 	
+	public Usuario(Empresa idEmpresa, String senha) {
+		
+		super();
+		this.idEmpresa= idEmpresa;
+		this.senha = senha;
+		
+	}
+
+	public Empresa getIdEmpresa() {
+		return idEmpresa;
+	}
+
+	public void setIdEmpresa(Empresa idEmpresa) {
+		this.idEmpresa = idEmpresa;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	
+	
 
 }
