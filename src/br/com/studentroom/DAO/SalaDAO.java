@@ -80,7 +80,7 @@ public class SalaDAO {
 				sala.setEstrutura(rs.getString("estrutura"));
 				sala.setLocalSala(rs.getString("local"));
 				sala.setPrecoSala(rs.getDouble("preco"));
-				String qrry = rs.getString("id_empresa");
+				String qrry = rs.getString("id_empresa");//cnpj da empresa
 				sala.setEmpresaCnpj(qrry);
 				EmpresaDAO dao1 = new EmpresaDAO();
 				sala.setObjEmpresa(dao1.buscarCodigoempresa(qrry));
