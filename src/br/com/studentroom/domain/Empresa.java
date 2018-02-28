@@ -1,8 +1,5 @@
 package br.com.studentroom.domain;
-import java.util.ArrayList;
-import java.util.List;
 
-import br.com.studentroom.domain.Sala;
 import br.com.studentroom.util.Endereco;
 public class Empresa {
 	
@@ -79,14 +76,5 @@ public class Empresa {
 		this.quantidadeSala = quantidadeSala;
 	}
 
-
-	/*public List<Sala> getSalas() {
-		return salas;
-	}
-
-	public void setSalas(Sala nSala) {
-		this.salas.add(nSala);
-	}*/
-	
 
 }

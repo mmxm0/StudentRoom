@@ -7,6 +7,7 @@ import java.util.List;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import br.com.studentroom.domain.Empresa;
+import br.com.studentroom.domain.Sala;
 import br.com.studentroom.factory.ConexaoBD;
 
 public class EmpresaDAO {
@@ -44,7 +45,7 @@ public class EmpresaDAO {
 	public void editarEmpresa(Empresa empresa) throws SQLException, ClassNotFoundException {
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
-		String sql = "UPDATE cliente SET telefone = ?, email=?,qtddSala=? WHERE cnpj=? ";
+		String sql = "UPDATE empresa SET telefone = ?, email=?,qtddSala=? WHERE cnpj=? ";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, empresa.getTelefone());
@@ -63,7 +64,7 @@ public class EmpresaDAO {
 	public Empresa buscarCodigoempresa(String cnpj) throws SQLException, ClassNotFoundException {
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
-		String sql = "SELECT cnpj FROM empresa,endereco WHERE cnpj=cnpj";
+		String sql = "SELECT * FROM empresa INNER JOIN endereco ON empresa.cnpj=endereco.id_empresa;";
 		try {
 			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, cnpj);
@@ -88,7 +89,7 @@ public class EmpresaDAO {
 		try {
 			ConexaoBD conexao = new ConexaoBD();
 			Connection conn = conexao.getConnection();
-			String sql = "SELECT * FROM cliente";
+			String sql = "SELECT * FROM empresa";
 			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			List<Empresa> listaEmpresa = new ArrayList<Empresa>();
@@ -106,6 +107,9 @@ public class EmpresaDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	public List<Sala> listaSalas(String cnpj){
+		
 	}
 
 }
