@@ -27,8 +27,8 @@ public class ClienteView {
 	}
 		
 	public void preparanovocliente() {
-		@SuppressWarnings("unused")
-		Cliente cliente = new Cliente();
+		
+		 cliente = new Cliente();
 		
 	}
 	
@@ -38,8 +38,7 @@ public class ClienteView {
 			
 			clientedao.salvarCliente(cliente);
 			
-			System.out.println("Cliente Salvo com sucesso");
-			
+						
 		}catch(SQLException e) {
 			 throw new RuntimeException(e);
 			
