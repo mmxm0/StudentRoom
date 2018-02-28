@@ -16,12 +16,12 @@ public class EmpresaDAO {
 		try {
 			ConexaoBD conexao = new ConexaoBD();
 			Connection conn = conexao.getConnection();
-			String sql = "INSERT into empresa (cnpj, nome, email, telefone, qtddSala) VALUES (?,?,?,?,?)";
+			String sql = "INSERT into empresa (cnpj, nome, email, telefone)VALUES(?,?,?,?)";//, qtddSala) VALUES (?,?,?,?,?)";
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, empresa.getCnpj());
 			stmt.setString(2, empresa.getNomeEmpresa());
 			stmt.setString(3, empresa.getEmail());
-			stmt.setInt(4, empresa.getQuantidadeSala());
+			//stmt.setInt(4, empresa.getQuantidadeSala());
 			stmt.execute();
 			stmt.close();
 			System.out.println("Empresa inserida no banco com sucesso!!!");
@@ -45,13 +45,13 @@ public class EmpresaDAO {
 	public void editarEmpresa(Empresa empresa) throws SQLException, ClassNotFoundException {
 		ConexaoBD conexao = new ConexaoBD();
 		Connection conn = conexao.getConnection();
-		String sql = "UPDATE empresa SET telefone = ?, email=?,qtddSala=? WHERE cnpj=? ";
+		String sql = "UPDATE empresa SET telefone = ?, email=? WHERE cnpj=? "; //,qtddSala=?
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, empresa.getTelefone());
 			stmt.setString(2, empresa.getEmail());
-			stmt.setInt(3, empresa.getQuantidadeSala());
-			stmt.setString(4, empresa.getCnpj());
+			//stmt.setInt(3, empresa.getQuantidadeSala());
+			stmt.setString(3, empresa.getCnpj());
 			stmt.execute();
 			stmt.close();
 			System.out.println("Dados do cliente atualizados com sucesso");
@@ -75,7 +75,7 @@ public class EmpresaDAO {
 				empresa.setNomeEmpresa(rs.getString("nome"));
 				empresa.setTelefone(rs.getString("telefone"));
 				empresa.setEmail(rs.getString("email"));
-				empresa.setQuantidadeSala(rs.getInt("qtddSala"));
+				//empresa.setQuantidadeSala(rs.getInt("qtddSala"));
 
 			}
 			conn.close();
@@ -98,7 +98,7 @@ public class EmpresaDAO {
 				empresa.setCnpj(rs.getString("cnpj"));
 				empresa.setNomeEmpresa(rs.getString("nome"));
 				empresa.setEmail(rs.getString("email"));
-				empresa.setQuantidadeSala(rs.getInt("qtddSala"));
+				//empresa.setQuantidadeSala(rs.getInt("qtddSala"));
 				empresa.setTelefone(rs.getString("telefone"));
 
 			}
