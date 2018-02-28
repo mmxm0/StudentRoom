@@ -10,6 +10,22 @@ public class SalaView {
 	
 	private Sala sala;
 	
+	public ArrayList<Sala> getItens() {
+		return itens;
+	}
+
+	public void setItens(ArrayList<Sala> itens) {
+		this.itens = itens;
+	}
+
+	public List<Sala> getItenProcurado() {
+		return itenProcurado;
+	}
+
+	public void setItenProcurado(List<Sala> itenProcurado) {
+		this.itenProcurado = itenProcurado;
+	}
+
 	private ArrayList<Sala>itens;
 	private List<Sala>itenProcurado;
 	
