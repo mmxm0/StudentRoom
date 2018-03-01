@@ -1,11 +1,11 @@
-package br.com.studentroom.view;
+package br.com.studentroom.controller;
 import java.sql.SQLException;
 import java.util.List;
 import br.com.studentroom.DAO.SalaDAO;
 import br.com.studentroom.domain.Sala;
 
 //TODO: Metodos buscaLocal e exibirEmpresa;
-public class SalaView {
+public class SalaController {
 	
 	private Sala sala;
 	private Sala localSala;

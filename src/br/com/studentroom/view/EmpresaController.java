@@ -3,7 +3,7 @@ import java.sql.SQLException;
 import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.DAO.EmpresaDAO;
 
-public class EmpresaView {
+public class EmpresaController {
 	private Empresa empresa;
 	
 	

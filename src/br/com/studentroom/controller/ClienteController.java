@@ -1,4 +1,5 @@
-package br.com.studentroom.view;
+package br.com.studentroom.controller
+;
 
 import java.sql.SQLException;
 import br.com.studentroom.domain.Cliente;
@@ -6,7 +7,7 @@ import br.com.studentroom.DAO.ClienteDAO;
 
 
 
-public class ClienteView {
+public class ClienteController {
 	
 	
 	private Cliente cliente;
