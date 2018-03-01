@@ -3,7 +3,10 @@ package br.com.studentroom.view;
 import java.sql.SQLException;
 import br.com.studentroom.domain.Cliente;
 import br.com.studentroom.DAO.ClienteDAO;
-
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+@ManagedBean(name = "MBCliente")
+@ViewScoped
 
 
 public class ClienteView {
