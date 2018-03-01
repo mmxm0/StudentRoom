@@ -1,6 +1,6 @@
 package br.com.studentroom.controller;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 import br.com.studentroom.DAO.SalaDAO;
 import br.com.studentroom.domain.Sala;
 
@@ -8,15 +8,16 @@ import br.com.studentroom.domain.Sala;
 public class SalaController {
 	
 	private Sala sala;
-	private Sala localSala;
-	private List<Sala>itenProcurado;
+	private ArrayList<Sala>itenProcurado;
 	
-
-	public List<Sala> getItenProcurado() {
+    public void buscasala () {
+    	sala = new Sala();
+    }
+	public ArrayList<Sala> getItenProcurado() {
 		return itenProcurado;
 	}
 
-	public void setItenProcurado(List<Sala> itenProcurado) {
+	public void setItenProcurado(ArrayList<Sala> itenProcurado) {
 		this.itenProcurado = itenProcurado;
 	}
 	public Sala getSala() {
@@ -33,7 +34,13 @@ public class SalaController {
 	
 	public void procurarlocal()throws SQLException,ClassNotFoundException{
 		
-		
+		try {
+			SalaDAO saladao = new SalaDAO();
+			String local;
+			itenProcurado= (ArrayList<Sala>) saladao.buscarLocalSala(local);
+			
+		}catch(SQLException e) {
+			 throw new RuntimeException(e);
 		
 		
 	}
@@ -43,5 +50,5 @@ public class SalaController {
 	
 	
 	
-	
+	}	
 }

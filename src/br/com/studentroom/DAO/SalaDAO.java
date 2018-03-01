@@ -91,7 +91,7 @@ public class SalaDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	public Sala buscarLocalSala(String local) throws ClassNotFoundException {
+	public Sala buscarLocalSala(String localSala) throws ClassNotFoundException {
 		
 		/* fazer por lista */
 		try {
@@ -99,7 +99,7 @@ public class SalaDAO {
 			Connection conn = conexao.getConnection();
 			String sql = "SELECT * FROM sala WHERE local=?";
 			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, local);
+			stmt.setString(1, localSala);
 			ResultSet rs = stmt.executeQuery();
 			Sala sala = new Sala();
 			
