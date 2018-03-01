@@ -112,7 +112,7 @@ public class SalaDAO {
 			
 		}
 	}
-
+	}
 	public List<Sala> lista() throws SQLException, ClassNotFoundException {
 		try {
 			ConexaoBD conexao = new ConexaoBD();

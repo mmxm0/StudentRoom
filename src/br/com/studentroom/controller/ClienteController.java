@@ -1,13 +1,12 @@
-package br.com.studentroom.controller
-;
+package br.com.studentroom.controller;
 
 import java.sql.SQLException;
 import br.com.studentroom.domain.Cliente;
 import br.com.studentroom.DAO.ClienteDAO;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
-@ManagedBean(name = "MBCliente")
-@ViewScoped
+//import javax.faces.bean.ManagedBean;
+//import javax.faces.bean.ViewScoped;
+//@ManagedBean(name = "MBCliente")
+//@ViewScoped
 
 
 public class ClienteController {

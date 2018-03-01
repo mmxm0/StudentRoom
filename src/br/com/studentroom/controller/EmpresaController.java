@@ -1,4 +1,4 @@
-package br.com.studentroom.view;
+package br.com.studentroom.controller;
 import java.sql.SQLException;
 import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.DAO.EmpresaDAO;
