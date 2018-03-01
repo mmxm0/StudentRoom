@@ -37,9 +37,9 @@ public class SalaDAO {
 		try {
 			ConexaoBD conexao = new ConexaoBD();
 			Connection conn = conexao.getConnection();
-			String sql = "DELETE from sala WHERE codigo=?";
+			String sql = "DELETE from sala WHERE id_empresa=?";
 			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, sala.getCodigoSala());
+			stmt.setString(1, sala.getEmpresaCnpj());
 			stmt.execute();
 			stmt.close();
 			System.out.println("Sala removida com sucesso!!!");
@@ -66,24 +66,22 @@ public class SalaDAO {
 		}
 	}
 
-	public Sala buscarCodigoSala(int codigoSala) throws SQLException, ClassNotFoundException {
-		try {//TODO: fazer inner join
+	public Sala buscarCodigoSala(String id_empresa) throws SQLException, ClassNotFoundException {
+		try {
 			ConexaoBD conexao = new ConexaoBD();
 			Connection conn = conexao.getConnection();
-			String sql = "SELECT * FROM sala WHERE codigo=?";
+			String sql = "SELECT * FROM sala INNER JOIN empresa ON sala.id_empresa=cnpj";
 			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setInt(1, codigoSala);
+			//stmt.setString(1, id_empresa);
 			ResultSet rs = stmt.executeQuery();
 			Sala sala = new Sala();
 			if (rs.next()) {
 				sala.setCodigoSala(rs.getInt("codigo"));
-				sala.setEstrutura(rs.getString("estrutura"));
+				sala.setReservaSala(rs.getString("reserva"));
 				sala.setLocalSala(rs.getString("local"));
 				sala.setPrecoSala(rs.getDouble("preco"));
-				String qrry = rs.getString("id_empresa");//cnpj da empresa
-				sala.setEmpresaCnpj(qrry);
-				EmpresaDAO dao1 = new EmpresaDAO();
-				sala.setObjEmpresa(dao1.buscarCodigoempresa(qrry));
+				sala.setEstrutura(rs.getString("estrutura"));
+				//sala.setEmpresaCnpj(rs.getString("id_empresa"));//cnpj da empresa
 			}
 			stmt.close();
 			return sala;

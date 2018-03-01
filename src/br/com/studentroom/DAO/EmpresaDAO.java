@@ -20,7 +20,7 @@ public class EmpresaDAO {
 			stmt.setString(1, empresa.getCnpj());
 			stmt.setString(2, empresa.getNomeEmpresa());
 			stmt.setString(3, empresa.getEmail());
-			//stmt.setInt(4, empresa.getQuantidadeSala());
+			stmt.setString(4, empresa.getTelefone());
 			stmt.execute();
 			stmt.close();
 			System.out.println("Empresa inserida no banco com sucesso!!!");

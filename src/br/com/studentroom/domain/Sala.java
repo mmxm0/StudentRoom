@@ -14,9 +14,8 @@ public class Sala {
 	super();
  }
  
- public Sala(int codigoSala,String localSala,String estrutura,String reservaSala,double precoSala,Empresa empresa ) {
+ public Sala(String localSala,String estrutura,String reservaSala,double precoSala,Empresa empresa ) {
      super();
-     this.codigoSala = codigoSala;
      this.localSala = localSala;
      this.estrutura = estrutura;
      this.reservaSala = reservaSala;

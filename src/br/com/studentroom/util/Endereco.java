@@ -15,13 +15,14 @@ public class Endereco {
 
 	private String estado;
 
+	private String id_empresa;
 	public Endereco() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 	public Endereco(String rua, String numero, String complemento, String bairro, String cep, String cidade,
-			String estado) {
+			String estado, String id_empresa) {
 		super();
 		this.rua = rua;
 		this.numero = numero;
@@ -30,6 +31,7 @@ public class Endereco {
 		this.cep = cep;
 		this.cidade = cidade;
 		this.estado = estado;
+		this.id_empresa = id_empresa;
 	}
 
 	public String getRua() {
@@ -88,4 +90,11 @@ public class Endereco {
 		this.estado = estado;
 	}
 
+	public String getId_empresa() {
+		return id_empresa;
+	}
+	
+	public void setId_empresa(String id) {
+		this.id_empresa = id;
+	}
 }
