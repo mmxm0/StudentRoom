@@ -1,27 +1,145 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Cadastrar Empresa</title>
-  </head>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="testar.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- INICIO DO SCRIPT MAPA -->
+    <script>
+    	function initMap() {
+    		var map = new google.maps.Map(document.getElementById('map'), {
+    			zoom: 12, center: {lat: -8.05428, lng: -34.8813}
+    		});
+    		setMarkers(map);
+    	}
+    	var beaches = [
+  			['Thirteenth Beach', -8.0556463, -34.9048992, 13],
+  			['Twelfth Beach', -8.1234042, -34.9021284, 12],
+  			['eleventh Beach', -7.978314, -34.835108, 11],
+  			['First Beach', -8.0375512, -34.9022729, 10],
+  			['Second Beach', -8.045612, -34.8985119, 9],
+  			['Third Beach', -8.044571, -34.8991073, 8],
+  			['Fourth Beach', -8.0538469, -34.9066156, 7],
+  			['Fifth Beach', -8.0482797, -34.8933002, 6],
+  			['Sixth Beach', -8.0430537, -34.8951101, 4],
+  			['Seventh Beach', -8.0555864, -34.8860996, 5],
+  			['Eighth Beach', -8.0276212, -34.917018, 3],
+  			['Ninth Beach', -8.029141, -34.9177772, 2],
+  			['Tenth Beach', -8.1234042, -34.9021284, 1],
+  		];
+    	function setMarkers(map) {
+    		var image = {
+    				url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
+    				size: new google.maps.Size(20, 32),
+    				origin: new google.maps.Point(0, 0),
+    				anchor: new google.maps.Point(8, 32)
+    		};
+    		var shape = {
+    				coords: [13, 16, 14, 10, 11, 16, 10, 16, 12, 8, 10, 8, 11], type: 'poly'
+    		};
+    		for (var i = 0; i < beaches.length; i++) {
+    			var beach = beaches[i];
+    			var marker = new google.maps.Marker({
+    				position: {lat: beach[1], lng: beach[2]},
+    				map: map,
+            		icon: image,
+		            shape: shape,
+        		    title: beach[0],
+            		zIndex: beach[3]
+          		});
+    		}
+    	}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5AetGBKUHnyacvx1oIvIvIMuwhQK6L1s&callback=initMap">
+    </script>
+    <!-- FIM DO SCRIPT MAPA -->
+</head>
+<body>
+	<nav class="navbar navbar-default">
+      <div class="container-fluid">
+        
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">SOBRE</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+	<form action="#" style="border:1px solid #ccc">
+  		<div class="container">
+		    <center><h1>Cadastro</h1></center>
+    		<hr>
+    			<label for="cnpj"><b>CNPJ: </b></label>
+    			<input type="text" placeholder="00.000.000/0000-00" name="cnpj" minlength="14" maxlength="14" required>
 
-  <body>
-    <h3>PAGINA DE CADASTRO DE PESSOA</h3>
-      <fieldset><b>
-        <legend><h4> DADOS PESSOAIS</h4></legend>
-        <b><label for="cpf">CPF:</label></b></br>
-        <b><input type="text" id="cpf" name="cpf" size="12" maxlength="12"/></b></br>
-        <b><label for="nome">Nome:</label></b></br>
-        <b><input type="text" id="nome" name="nome" size="70" maxlength="85"/></b></br>
-        <b><label for="sobrenome">Sobrenome:</label></b></br>
-        <b><input type="text" id="sobrenome" name="sobrenome" size="70" maxlength="85"/></b></br>
-        <b><label for="email">Email:</label></b></br>
-        <b><input type="email" id="email" name="email" size="51" maxlength="85"/></b></br>
-        <b><label for="telefone">Telefone:</label></b></br>
-        <b><input type="tel" id="telefone" name="telefone" size="12" maxlength="12"/></b></br>
-        <b><label for="mensagem">Mensagem:</label></b></br>
-        <b><textarea cols='50' rows='10' name='texto' size="255" maxlength="255"></textarea></b>
-      </fieldset>
-    <input type="submit" name="botaoAcao" value="Salvar" class="btn-success"/>
-  </body>
+    			<label for="nome"><b>Nome: </b></label>
+    			<input type="text" placeholder="Nome da Empresa" name="nome" required>
+
+    			<label for="email"><b>Email: </b></label>
+    			<input type="text" placeholder="example@example.com" name="email" required>
+
+    			<label for="fone"><b>Telefone: </b></label>
+    			<input type="text" placeholder="Enter Email" name="email" required>
+
+    			<center><h1>Cadastre sua Sala</h1></center>
+    		<hr>
+    			 &nbsp;&nbsp;
+
+    			<label for="rua">Rua: </label>
+                <input type="text" id="rua" name="rua" size="75" placeholder="Rua" maxlength="80"/>
+                &nbsp;&nbsp;
+                
+                <label for="num">Número: </label>
+                <input type="text" id="num" name="num" size="7" placeholder="Número" maxlength="5"/>
+                <br/><br/>
+                 &nbsp;&nbsp;
+                
+                <label for="comp">Complemento: </label>
+                <input type="text" id="comp" name="comp" size="49" placeholder="Complemento" maxlength="70"/>
+                 &nbsp;&nbsp;
+                
+                <label for="cep">CEP: </label>
+                <input type="text" id="cep" name="cep" size="12" placeholder="CEP" maxlength="8"/>
+                &nbsp;&nbsp;
+                
+                <label for="bairro">Bairro: </label>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" size="12" maxlength="40"/>
+                <br><br>
+                 &nbsp;&nbsp;
+                
+                <label for="cidade">Cidade: </label>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" size="12" maxlength="40"/>
+                &nbsp;&nbsp;
+                
+                <label for="uf">UF: </label>
+                <select id="uf" name="uf">
+				<option value="">-</option>
+                <option value="pernambuco">PE</option>
+                </select><br><br><br>
+
+
+    			<label for="email"><b>Descrição: </b></label>
+    			<textarea cols="80" rows="5" name="texto" size="900" maxlength="900" placeholder="Insira aqui uma breve descrição da sala." required></textarea><br><br>
+
+    			<label for="imagem"><b>Imagem: </b></label>
+    			<input type="file" name="image" required><br><br>
+
+    			<label for="disponibilidade"><b>Disponibilidade da Sala: </b></label>
+    			<label class="radio-inline"><input type="radio" name="modalidade" value="1">Reservada</label>
+    			<label class="radio-inline"><input type="radio" name="modalidade" value="2">Disponivel</label></b></br><br>
+
+    			<label for="preco"><b>Preço R$: </b></label>
+    			<input type="text" placeholder="Insria aqui o valor do aluguel da sala..." name="preco" required>
+
+    			<div class="clearfix">
+    				<button type="button" class="cancelbtn">Cancelar</button>
+    				<button type="submit" class="signupbtn">Cadastrar Sala</button>
+    			</div>
+    		</div>
+    	</form>
+	</body>
 </html>
