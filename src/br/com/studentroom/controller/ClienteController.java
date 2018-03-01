@@ -3,10 +3,12 @@ package br.com.studentroom.controller;
 import java.sql.SQLException;
 import br.com.studentroom.domain.Cliente;
 import br.com.studentroom.DAO.ClienteDAO;
-//import javax.faces.bean.ManagedBean;
-//import javax.faces.bean.ViewScoped;
-//@ManagedBean(name = "MBCliente")
-//@ViewScoped
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.application.FacesMessage;
+@ManagedBean(name="clienteBean")
+@RequestScoped
 
 
 public class ClienteController {
@@ -29,7 +31,10 @@ public class ClienteController {
 		
 	}
 	
+	
+	
 	public void novoCliente()throws SQLException,ClassNotFoundException {
+		
 		try {
 			ClienteDAO clientedao = new ClienteDAO();
 			

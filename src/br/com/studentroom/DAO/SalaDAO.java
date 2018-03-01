@@ -42,7 +42,7 @@ public class SalaDAO {
 			stmt.setInt(1, sala.getCodigoSala());
 			stmt.execute();
 			stmt.close();
-			System.out.println("Sala removida do banco com sucesso!!!");
+			System.out.println("Sala removida com sucesso!!!");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -91,7 +91,7 @@ public class SalaDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	public Sala buscarLocalSala(String localSala) throws ClassNotFoundException {
+	public void buscarLocalSala(String localSala) throws ClassNotFoundException {
 		
 		/* fazer por lista */
 		try {
@@ -103,7 +103,7 @@ public class SalaDAO {
 			ResultSet rs = stmt.executeQuery();
 			Sala sala = new Sala();
 			
-			/*if (rs.next()) {
+			if (rs.next()) {
 				sala.setCodigoSala(rs.getInt("codigo"));
 				sala.setEstrutura(rs.getString("estrutura"));
 				sala.setLocalSala(rs.getString("local"));
@@ -111,17 +111,18 @@ public class SalaDAO {
 				String qrry = rs.getString("id_empresa");//cnpj da empresa
 				sala.setEmpresaCnpj(qrry);
 				EmpresaDAO dao1 = new EmpresaDAO();
-				sala.setObjEmpresa(dao1.buscarCodigoempresa(qrry));*/
+				sala.setObjEmpresa(dao1.buscarCodigoempresa(qrry));
 			
-		//}else {
-		//	stmt.close();
-				return null;
-		//}
+		}else {
+			stmt.close();
+				
+		}
 	}catch (SQLException e){
 		throw new RuntimeException(e);
 		
 	}
-	}
+	
+	}	
 	public List<Sala> lista() throws SQLException, ClassNotFoundException {
 		try {
 			ConexaoBD conexao = new ConexaoBD();

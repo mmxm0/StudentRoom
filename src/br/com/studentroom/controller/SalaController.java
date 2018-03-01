@@ -32,18 +32,18 @@ public class SalaController {
 		sala = new Sala();
 	}
 	
-	public void procurarlocal()throws SQLException,ClassNotFoundException{
+	/*public void procurarlocal()throws SQLException,ClassNotFoundException{
 		
 		try {
 			SalaDAO saladao = new SalaDAO();
 			String local;
-			itenProcurado= (ArrayList<Sala>) saladao.buscarLocalSala(local);
+			//itenProcurado= (ArrayList<Sala>) saladao.buscarLocalSala(local);
 			
 		}catch(SQLException e) {
 			 throw new RuntimeException(e);
 		
 		
-	}
+	}*/
 	
 	
 
@@ -51,4 +51,3 @@ public class SalaController {
 	
 	
 	}	
-}

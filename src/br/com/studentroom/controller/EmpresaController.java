@@ -2,6 +2,13 @@ package br.com.studentroom.controller;
 import java.sql.SQLException;
 import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.DAO.EmpresaDAO;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.application.FacesMessage;
+@ManagedBean(name="empresaBean")
+@RequestScoped
+
 
 public class EmpresaController {
 	private Empresa empresa;
@@ -24,10 +31,14 @@ public class EmpresaController {
 	
 	public void novaempresa()throws SQLException,ClassNotFoundException {
 		try {
-		EmpresaDAO empresadao = new EmpresaDAO();
+			if(empresa.getCnpj()!= null) {
+				
+				System.out.println("Empresa ja cadastrada!");
+			}else {
+		      EmpresaDAO empresadao = new EmpresaDAO();
 		
-		empresadao.salvarEmpresa(empresa);
-		
+		      empresadao.salvarEmpresa(empresa);
+			}
 		}catch(SQLException e) {
 			 throw new RuntimeException(e);
 	}
