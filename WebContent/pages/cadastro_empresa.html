@@ -1,61 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student Room - Cadastro Empresa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/cadastro_empresa.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <!-- INICIO DO SCRIPT MAPA -->
-    <script>
-    	function initMap() {
-    		var map = new google.maps.Map(document.getElementById('map'), {
-    			zoom: 12, center: {lat: -8.05428, lng: -34.8813}
-    		});
-    		setMarkers(map);
-    	}
-    	var beaches = [
-  			['Thirteenth Beach', -8.0556463, -34.9048992, 13],
-  			['Twelfth Beach', -8.1234042, -34.9021284, 12],
-  			['eleventh Beach', -7.978314, -34.835108, 11],
-  			['First Beach', -8.0375512, -34.9022729, 10],
-  			['Second Beach', -8.045612, -34.8985119, 9],
-  			['Third Beach', -8.044571, -34.8991073, 8],
-  			['Fourth Beach', -8.0538469, -34.9066156, 7],
-  			['Fifth Beach', -8.0482797, -34.8933002, 6],
-  			['Sixth Beach', -8.0430537, -34.8951101, 4],
-  			['Seventh Beach', -8.0555864, -34.8860996, 5],
-  			['Eighth Beach', -8.0276212, -34.917018, 3],
-  			['Ninth Beach', -8.029141, -34.9177772, 2],
-  			['Tenth Beach', -8.1234042, -34.9021284, 1],
-  		];
-    	function setMarkers(map) {
-    		var image = {
-    				url: 'https://developers.google.com/maps/documentation/javascript/images/circle.png',
-    				size: new google.maps.Size(20, 32),
-    				origin: new google.maps.Point(0, 0),
-    				anchor: new google.maps.Point(8, 32)
-    		};
-    		var shape = {
-    				coords: [13, 16, 14, 10, 11, 16, 10, 16, 12, 8, 10, 8, 11], type: 'poly'
-    		};
-    		for (var i = 0; i < beaches.length; i++) {
-    			var beach = beaches[i];
-    			var marker = new google.maps.Marker({
-    				position: {lat: beach[1], lng: beach[2]},
-    				map: map,
-            		icon: image,
-		            shape: shape,
-        		    title: beach[0],
-            		zIndex: beach[3]
-          		});
-    		}
-    	}
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5AetGBKUHnyacvx1oIvIvIMuwhQK6L1s&callback=initMap">
-    </script>
-    <!-- FIM DO SCRIPT MAPA -->
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -68,6 +18,7 @@
         </ul>
       </div>
     </nav>
+    
 	<form action="#" style="border:1px solid #ccc">
   		<div class="container">
 		    <center><h1>Cadastro</h1></center>
@@ -141,9 +92,9 @@
     		</div>
     	</form>
     	<!-- rodape -->
-    	<footer><center>
-		    <p>Copyright © 2018<i> By:Student Room</i></p>
-      		<p>Contato: <a href="#">studentroom@example.com</a>.</p>
-    	</center></footer>
+    	<footer>
+      <p>Copyright © 2018<i> By:Student Room</i></p>
+      <p>Contato: <a href="#">studentroomsalas@gmail.com</a>.</p>
+    </footer>
 	</body>
 </html>
