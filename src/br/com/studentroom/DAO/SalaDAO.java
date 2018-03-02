@@ -89,6 +89,7 @@ public class SalaDAO {
 			throw new RuntimeException(e);
 		}
 	}
+<<<<<<< refs/remotes/origin/desenvolve
 	public void buscarLocalSala(String localSala) throws ClassNotFoundException {
 		
 		/* fazer por lista */
@@ -121,6 +122,8 @@ public class SalaDAO {
 	}
 	
 	}	
+=======
+>>>>>>> Commit do desespero
 	public List<Sala> lista() throws SQLException, ClassNotFoundException {
 		try {
 			ConexaoBD conexao = new ConexaoBD();
