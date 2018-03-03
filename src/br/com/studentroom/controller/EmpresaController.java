@@ -17,7 +17,7 @@ import javax.faces.application.FacesMessage;
 
 public class EmpresaController implements Serializable{
 	private Empresa empresa;
-	private HtmlInputText cnpj;
+	private String cnpj;
 
 	public Empresa getEmpresa() {
 		return empresa;
