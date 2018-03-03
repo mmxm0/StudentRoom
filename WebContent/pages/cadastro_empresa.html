@@ -1,97 +1,101 @@
 <!DOCTYPE html>
-<html xmlns:p="http://primefaces.org/ui"
-xmlns:h="http://xmlns.jcp.org/jsf/html">
+<html>
 <head>
-<title>Student Room - Cadastro Empresa</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/cadastro_empresa.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Student Room - Cadastro Empresa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/cadastro_empresa.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.html">Home</a></li>
-				<li><a href="#">Sobre</a></li>
-				<li><a href="cadastro_empresa.html">Cadastre-se</a></li>
-				<li><a href="contato.html">Contato</a></li>
-			</ul>
-		</div>
-	</nav>
+      <div class="container-fluid">        
+        <ul class="nav navbar-nav">
+          <li ><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li class="active"><a href="cadastro_empresa.html">Cadastre-se</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+	<!-- Formulario de cadastro -->
+	<form action="#" style="border:1px solid #ccc">
+  		<div class="container">
+		    <h1 class="text-center">Cadastro</h1>
+    		<hr>
+    			<label for="cnpj"><b>CNPJ: </b></label>
+    			<input type="text" placeholder="00.000.000/0000-00" name="cnpj" minlength="14" maxlength="14" required>
 
-	<h:form>
-		<div class="container">
-			<center>
-				<h1>Cadastro</h1>
-			</center>
-			<hr>
-			<label for="cnpj"><b>CNPJ: </b></label>
-			<p:inputText value="#{empresaBean.cnpj}" type="text"
-				placeholder="00.000.000/0000-00" name="cnpj" minlength="14"
-				maxlength="14" required></p:inputText>
+    			<label for="nome"><b>Nome: </b></label>
+    			<input type="text" placeholder="Nome da Empresa" name="nome" required>
 
-			<label for="nome"><b>Nome: </b></label> <input type="text"
-				placeholder="Nome da Empresa" name="nome" required> <label
-				for="email"><b>Email: </b></label> <input type="text"
-				placeholder="example@example.com" name="email" required> <label
-				for="fone"><b>Telefone: </b></label> <input type="text"
-				placeholder="Enter Email" name="email" required>
+    			<label for="email"><b>Email: </b></label>
+    			<input type="text" placeholder="example@example.com" name="email">
 
-			<center>
-				<h1>Cadastre sua Sala</h1>
-			</center>
-			<hr>
-			&nbsp;&nbsp; <label for="rua">Rua: </label> <input type="text"
-				id="rua" name="rua" size="75" placeholder="Rua" maxlength="80" />
-			&nbsp;&nbsp; <label for="num">NÃºmero: </label> <input type="text"
-				id="num" name="num" size="7" placeholder="NÃºmero" maxlength="5" /> <br />
-			<br /> &nbsp;&nbsp; <label for="comp">Complemento: </label> <input
-				type="text" id="comp" name="comp" size="49"
-				placeholder="Complemento" maxlength="70" /> &nbsp;&nbsp; <label
-				for="cep">CEP: </label> <input type="text" id="cep" name="cep"
-				size="12" placeholder="CEP" maxlength="8" /> &nbsp;&nbsp; <label
-				for="bairro">Bairro: </label> <input type="text" id="bairro"
-				name="bairro" placeholder="Bairro" size="12" maxlength="40" /> <br>
-			<br> &nbsp;&nbsp; <label for="cidade">Cidade: </label> <input
-				type="text" id="cidade" name="cidade" placeholder="Cidade" size="12"
-				maxlength="40" /> &nbsp;&nbsp; <label for="uf">UF: </label> <select
-				id="uf" name="uf">
+    			<label for="fone"><b>Telefone: </b></label>
+    			<input type="text" placeholder="Enter Email" name="email">
+
+    			<h1 class="text-center">Cadastre sua Sala</h1>
+    		<hr>
+    			 &nbsp;&nbsp;
+
+    			<label for="rua">Rua: </label>
+                <input type="text" id="rua" name="rua" size="75" placeholder="Rua" maxlength="80"/>
+                &nbsp;&nbsp;
+                
+                <label for="num">Número: </label>
+                <input type="text" id="num" name="num" size="7" placeholder="Número" maxlength="5"/>
+                <br/><br/>
+                 &nbsp;&nbsp;
+                
+                <label for="comp">Complemento: </label>
+                <input type="text" id="comp" name="comp" size="49" placeholder="Complemento" maxlength="70"/>
+                 &nbsp;&nbsp;
+                
+                <label for="cep">CEP: </label>
+                <input type="text" id="cep" name="cep" size="12" placeholder="CEP" maxlength="8"/>
+                &nbsp;&nbsp;
+                
+                <label for="bairro">Bairro: </label>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" size="12" maxlength="40"/>
+                <br><br>
+                 &nbsp;&nbsp;
+                
+                <label for="cidade">Cidade: </label>
+                <input type="text" id="cidade" name="cidade" placeholder="Cidade" size="12" maxlength="40"/>
+                &nbsp;&nbsp;
+                
+                <label for="uf">UF: </label>
+                <select id="uf" name="uf">
 				<option value="">-</option>
-				<option value="pernambuco">PE</option>
-			</select><br>
-			<br>
-			<br> <label for="estrutura"><b>DescriÃ§Ã£o: </b></label>
-			<textarea cols="80" rows="5" name="texto" size="255" maxlength="255"
-				placeholder="Insira aqui uma breve descriÃ§Ã£o da sala." required></textarea>
-			<br>
-			<br> <label for="imagem"><b>Imagem: </b></label> <input
-				type="file" name="image"><br>
-			<br> <label for="reserva"><b>Disponibilidade da
-					Sala: </b></label> <label class="radio-inline"><input type="radio"
-				name="modalidade" value="1">Reservada</label> <label
-				class="radio-inline"><input type="radio" name="modalidade"
-				value="2">Disponivel</label></b></br>
-			<br> <label for="preco"><b>PreÃ§o R$: </b></label> <input
-				type="text" placeholder="Insria aqui o valor do aluguel da sala..."
-				name="preco" required>
+                <option value="pernambuco">PE</option>
+                </select><br><br><br>
 
-			<div class="clearfix">
-				<button type="button" class="cancelbtn">Cancelar</button>
-				<button type="submit" class="signupbtn">Cadastrar Sala</button>
-			</div>
-		</div>
-	</h:form>
-	<!-- rodape -->
-	<footer>
-		<p>
-			Copyright Â© 2018<i> By:Student Room</i>
-		</p>
-		<p>
-			Contato: <a href="#">studentroomsalas@gmail.com</a>.
-		</p>
-	</footer>
-</body>
+
+    			<label for="estrutura"><b>Descrição: </b></label>
+    			<textarea cols="80" rows="5" name="texto" size="255" maxlength="255" placeholder="Insira aqui uma breve descrição da sala."></textarea><br><br>
+
+    			<label for="imagem"><b>Imagem: </b></label>
+    			<input type="file" name="image"><br><br>
+
+    			<label for="reserva"><b>Disponibilidade da Sala: </b></label>
+    			<label class="radio-inline"><input type="radio" name="modalidade" value="1">Reservada</label>
+    			<label class="radio-inline"><input type="radio" name="modalidade" value="2">Disponivel</label></b></br><br>
+
+    			<label for="preco"><b>Preço R$: </b></label>
+    			<input type="text" placeholder="Insria aqui o valor do aluguel da sala..." name="preco">
+
+    			<div class="clearfix">
+    				<button type="submit" class="signupbtn">Finalizar</button>
+    			</div>
+    		</div>
+    </form>
+    	
+    	<!-- rodape -->
+    	<footer class="text-center">
+      		<p>Copyright © 2018<i> By:Student Room</i></p>
+      		<p>Contato: <a href="#">studentroomsalas@gmail.com</a>.</p>
+    	</footer>
+	</body>
 </html>
