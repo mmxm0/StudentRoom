@@ -1,4 +1,9 @@
+
 package br.com.studentroom.controller;
+
+import javax.faces.component.html.HtmlInputText;
+
+import java.io.Serializable;
 import java.sql.SQLException;
 import br.com.studentroom.domain.Empresa;
 import br.com.studentroom.DAO.EmpresaDAO;
@@ -6,30 +11,25 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.application.FacesMessage;
-@ManagedBean(name="empresaBean")
-@RequestScoped
 
+@ManagedBean(name = "empresaBean")
+@ViewScoped
 
-public class EmpresaController {
+public class EmpresaController implements Serializable{
 	private Empresa empresa;
-	
-	
+	private HtmlInputText cnpj;
+
 	public Empresa getEmpresa() {
 		return empresa;
 	}
+
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
-	
-	
-	
-	public void preparanovaempresa() {
-		
-		empresa = new Empresa();
-			
-	}
-	
+
 	public void novaempresa()throws SQLException,ClassNotFoundException {
+        Empresa empresa = new Empresa();
+        empresa.setCnpj(cnpj);
 		try {
 			if(empresa.getCnpj()!= null) {
 				
@@ -43,47 +43,4 @@ public class EmpresaController {
 			 throw new RuntimeException(e);
 	}
 	
-	}
-	
-	
-	public void excluirempresaview()throws SQLException,ClassNotFoundException{
-		
-		try {
-			EmpresaDAO empresadao = new EmpresaDAO();
-			
-			empresadao.excluirEmpresa(empresa);
-			
-		}catch(SQLException e) {
-			 throw new RuntimeException(e);
-	
-		
-	  }
-	}		
-		
-		
-  public  void  atualizarempresa()throws SQLException,ClassNotFoundException{
-		
-		try {
-			EmpresaDAO empresadao = new EmpresaDAO();
-			
-			
-			if(empresa.getCnpj()!= null) {
-				
-				empresadao.editarEmpresa(empresa);
-			}else {
-				
-				System.out.println("Empresa nao cadastrada.");
-			}
-			
-			
-		}catch(SQLException e) {
-			 throw new RuntimeException(e);
-		
-
-	}
-	
-  }	
-	
-	
-
-}
+}}

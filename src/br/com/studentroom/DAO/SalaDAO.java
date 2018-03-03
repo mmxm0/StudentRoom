@@ -89,41 +89,7 @@ public class SalaDAO {
 			throw new RuntimeException(e);
 		}
 	}
-<<<<<<< refs/remotes/origin/desenvolve
-	public void buscarLocalSala(String localSala) throws ClassNotFoundException {
-		
-		/* fazer por lista */
-		try {
-			ConexaoBD conexao = new ConexaoBD();
-			Connection conn = conexao.getConnection();
-			String sql = "SELECT * FROM sala WHERE local=?";
-			java.sql.PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1, localSala);
-			ResultSet rs = stmt.executeQuery();
-			Sala sala = new Sala();
-			
-			if (rs.next()) {
-				sala.setCodigoSala(rs.getInt("codigo"));
-				sala.setEstrutura(rs.getString("estrutura"));
-				sala.setLocalSala(rs.getString("local"));
-				sala.setPrecoSala(rs.getDouble("preco"));
-				String qrry = rs.getString("id_empresa");//cnpj da empresa
-				sala.setEmpresaCnpj(qrry);
-				EmpresaDAO dao1 = new EmpresaDAO();
-				sala.setObjEmpresa(dao1.buscarCodigoempresa(qrry));
-			
-		}else {
-			stmt.close();
-				
-		}
-	}catch (SQLException e){
-		throw new RuntimeException(e);
-		
-	}
-	
-	}	
-=======
->>>>>>> Commit do desespero
+
 	public List<Sala> lista() throws SQLException, ClassNotFoundException {
 		try {
 			ConexaoBD conexao = new ConexaoBD();

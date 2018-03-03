@@ -10,9 +10,12 @@ public class TesteEmpresaDAO {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 	 
 	 Endereco  endereco = new Endereco("115","16","prox. a","S�o Jos�","5433333","Recife","PE","123123");
-	 Empresa e1 = new Empresa("1234","Empresa Falsa S/A","12345123451234",endereco,"354123","a@mail.com");
+	 Empresa e1 = new Empresa("1234","Empresa Falsa S/A","1212321",endereco,"354123","a@mail.com");
 	 EmpresaDAO setDB = new EmpresaDAO();
 	 setDB.salvarEmpresa(e1);
+	 Empresa e2 = new Empresa();
+	 e2.setCnpj("12345");
+	 setDB.salvarEmpresa(e2);
 	}
 
 }
